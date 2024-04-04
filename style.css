@@ -1,0 +1,49 @@
+/* Hier kannst du deine benutzerdefinierten CSS-Stile hinzufügen */
+
+.nav-item:hover .nav-link {
+    color: #ffc107; /* Farbe für den Hover-Effekt */
+}
+
+.nav-link {
+    transition: color 0.3s; /* Übergang für die Farbänderung */
+}
+/* Globale Anpassungen */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Hintergrundfarbe */
+}
+
+.container {
+    max-width: 800px; /* Begrenzung der Containerbreite */
+    margin: auto; /* Zentrierung des Containers */
+}
+
+.card {
+    margin-top: 20px; /* Abstand zwischen den Karten */
+}
+
+/* Formulare */
+
+.form-label {
+    font-weight: bold; /* Fettschrift für Label */
+}
+
+/* Listen */
+
+.list-group-item {
+    background-color: #fff; /* Hintergrundfarbe der Listenelemente */
+    border-color: #dee2e6; /* Randfarbe der Listenelemente */
+}
+
+/* Buttons */
+
+.btn {
+    margin-top: 10px; /* Abstand über den Buttons */
+}
+
+/* Nachrichten */
+
+.alert {
+    margin-top: 20px; /* Abstand über den Warnmeldungen */
+}
