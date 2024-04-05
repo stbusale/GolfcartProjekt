@@ -44,46 +44,54 @@
 
 
 <div id="game-container">
-    <div class="key btn btn-primary" id="W" style="width: 100%;">W</div>
-    <div class="key btn btn-primary" id="A">A</div>
-    <div class="key btn btn-primary" id="S">S</div>
-    <div class="key btn btn-primary" id="D">D</div>
+    <div class="key btn btn-primary" id="W" style="width: 100%;">Forward</div>
+    <div class="key btn btn-primary" id="A">Left</div>
+    <div class="key btn btn-primary" id="S">Backward</div>
+    <div class="key btn btn-primary" id="D">Right</div>
 </div>
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-GwEVjflRK1A8X2B+S0&FNYIv4uqABCI5s9zoWsYWddK+yQ6GLZ1czcG5vHQ+fgRJ" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-YXy2ovjEe&/JqORn7IVlX4paC/nKYjBTz9aOb0lSMT5WT7rVsbrCqFNn6tbJFf6P" crossorigin="anonymous"></script>
 <script>
-    const keys = ['W', 'A', 'S', 'D'];
+    const commands = {
+        W: 'forward',
+        A: 'left',
+        S: 'backward',
+        D: 'right'
+    };
+
     let pressedKey = '';
 
     document.addEventListener('keydown', function(event) {
-        if (keys.includes(event.key.toUpperCase())) {
+        const key = event.key.toUpperCase();
+        if (Object.keys(commands).includes(key)) {
             if (pressedKey !== '') {
                 document.getElementById(pressedKey).classList.remove('active');
             }
-            pressedKey = event.key.toUpperCase();
+            pressedKey = key;
             document.getElementById(pressedKey).classList.add('active');
-            sendData(pressedKey);
+            sendData(commands[key]);
         }
     });
 
     document.addEventListener('keyup', function(event) {
-        if (keys.includes(event.key.toUpperCase())) {
+        const key = event.key.toUpperCase();
+        if (Object.keys(commands).includes(key)) {
             pressedKey = '';
-            document.getElementById(event.key.toUpperCase()).classList.remove('active');
-            sendData('0');
+            document.getElementById(key).classList.remove('active');
+            sendData('stop');
         }
     });
 
-    function sendData(key) {
-        console.log('Sent data:', key); // Ausgabe der gesendeten Daten im Browser-Terminal
+    function sendData(command) {
+        console.log('Sent command:', command);
         fetch('http://10.10.30.126:3000/keypress', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ key })
+            body: JSON.stringify({ command })
         })
         .then(response => {
             if (!response.ok) {
