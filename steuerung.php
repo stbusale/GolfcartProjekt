@@ -6,6 +6,8 @@
 <title>Meine Seite mit Menüleiste und WASD Steuerung</title>
 <!-- Bootstrap 5 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cv/X&Uivz" crossorigin="anonymous">
+<link href="style.css" rel="stylesheet">
+
 <style>
     body {
         margin: 0;
