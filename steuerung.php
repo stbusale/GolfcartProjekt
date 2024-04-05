@@ -61,24 +61,23 @@
         D: 'right'
     };
 
-    let pressedKey = '';
+    let lastKeyPressed = '';
 
     document.addEventListener('keydown', function(event) {
-        const key = event.key.toUpperCase();
-        if (Object.keys(commands).includes(key)) {
-            if (pressedKey !== '') {
-                document.getElementById(pressedKey).classList.remove('active');
+        if (!lastKeyPressed) {
+            const key = event.key.toUpperCase();
+            if (Object.keys(commands).includes(key)) {
+                lastKeyPressed = key;
+                document.getElementById(key).classList.add('active');
+                sendData(commands[key]);
             }
-            pressedKey = key;
-            document.getElementById(pressedKey).classList.add('active');
-            sendData(commands[key]);
         }
     });
 
     document.addEventListener('keyup', function(event) {
         const key = event.key.toUpperCase();
-        if (Object.keys(commands).includes(key)) {
-            pressedKey = '';
+        if (lastKeyPressed === key) {
+            lastKeyPressed = '';
             document.getElementById(key).classList.remove('active');
             sendData('stop');
         }
