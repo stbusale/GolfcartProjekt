@@ -1,49 +1,68 @@
-/* Hier kannst du deine benutzerdefinierten CSS-Stile hinzufügen */
-
-.nav-item:hover .nav-link {
-    color: #ffc107; /* Farbe für den Hover-Effekt */
-}
-
-.nav-link {
-    transition: color 0.3s; /* Übergang für die Farbänderung */
-}
-/* Globale Anpassungen */
+/* Allgemeine Stile */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Hintergrundfarbe */
+    background-color: #222; /* Dunkler Hintergrund */
+    color: #fff; /* Weiße Textfarbe */
+}
+
+body {
+    background-color: #222 !important;
+    color: #fff !important;
 }
 
 .container {
-    max-width: 800px; /* Begrenzung der Containerbreite */
-    margin: auto; /* Zentrierung des Containers */
+    max-width: 1200px; /* Maximale Breite des Inhalts */
+    margin: 0 auto; /* Zentriert den Inhalt */
 }
 
-.card {
-    margin-top: 20px; /* Abstand zwischen den Karten */
+.navbar {
+    background-color: #333; /* Dunkle Hintergrundfarbe für die Navigationsleiste */
 }
 
-/* Formulare */
-
-.form-label {
-    font-weight: bold; /* Fettschrift für Label */
+.navbar-brand, .navbar-nav .nav-link {
+    color: #fff; /* Weiße Textfarbe für die Navigationslinks */
 }
 
-/* Listen */
-
-.list-group-item {
-    background-color: #fff; /* Hintergrundfarbe der Listenelemente */
-    border-color: #dee2e6; /* Randfarbe der Listenelemente */
+.navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: #aaa; /* Farbe für Navigationslinks beim Hover */
 }
 
-/* Buttons */
-
-.btn {
-    margin-top: 10px; /* Abstand über den Buttons */
+.section {
+    padding: 60px 0; /* Abstand oben und unten für Abschnitte */
 }
 
-/* Nachrichten */
+.section-heading {
+    color: #fff; /* Weiße Textfarbe für Abschnittsüberschriften */
+}
 
-.alert {
-    margin-top: 20px; /* Abstand über den Warnmeldungen */
+/* Stile für das Kontaktformular */
+
+.form-label, .form-control, .btn-primary {
+    background-color: #444; /* Hintergrundfarbe für Formularfelder und Button */
+    color: #fff; /* Weiße Textfarbe für Formularfelder und Button */
+    border-color: #555; /* Randfarbe für Formularfelder und Button */
+}
+
+.form-control:focus {
+    background-color: #555; /* Hintergrundfarbe für Fokus auf Formularfelder */
+    border-color: #666; /* Randfarbe für Fokus auf Formularfelder */
+}
+
+/* Stile für Bilder */
+
+.team-member img {
+    border-radius: 10px; /* Runde Ecken für Bilder */
+    width: 100%; /* Bilder füllen ihre Container */
+    height: auto; /* Automatische Höhe für responsive Bilder */
+    margin-bottom: 20px; /* Abstand unten für Bilder */
+}
+
+/* Stile für die Footer */
+
+footer {
+    background-color: #333; /* Dunkle Hintergrundfarbe für Footer */
+    color: #fff; /* Weiße Textfarbe für Footer */
+    padding: 30px 0; /* Abstand oben und unten für Footer */
+    text-align: center; /* Zentriert den Text im Footer */
 }

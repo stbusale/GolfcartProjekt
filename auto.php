@@ -1,1 +1,1 @@
-<p>peter</p>
+<link href="style.css" rel="stylesheet">

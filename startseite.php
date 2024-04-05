@@ -6,6 +6,7 @@
     <title>Startseite</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         /* Fügen Sie hier Ihren benutzerdefinierten CSS-Code hinzu */
@@ -40,7 +41,7 @@
         <h1 class="display-4">Team ZIB</h1>
         <p class="lead">Golfcart-Projekt 2024</p>
     </div>
-    <a class="nav-link" href="index.php?page=steuerung.php">Steuerung</a>
+    
 </header>
 
 <!-- Über uns -->
