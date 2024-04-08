@@ -61,8 +61,7 @@
                 "name" => "Clemens Obkircher",
                 "role" => "Nichts Macher",
                 "image" => "images/Clemens.jpg",
-                "description" => "Hier kann eine Beschreibung von Clemens Obkircher stehen."
-            ),
+                "description" => "Clemens aka Tischler, Pilot, Stewardess, Lockführer, Kontrolleur, Koch, Grillmeister, der der am meisten sauft, der der am längsten wachbleibt, Reiseführer, Security, Vater, Onkel, Mutter, Opa, Rentner, Kellner, Taxi-Fahrer, Organisator, Fluglotse, Motivator, Animateur, der Beste, Ehrenmann, Frauenheld, der der die Frauen für die anderen klärt und den Ehrenmann macht, Mechaniker, Techniker, der Arzt, Apotheker, Friseur, Putzfrau, Butler, Fußballexperte, der Profi-Sportler (jede Sportart) der durch eine Verletzung gestoppt wurde, Elektriker, Abspüler, Müllmann, Fahrer, Schmuggler, Weinverkoster, Reiche, Abfucker, Besserwisser, Fashion Experte, Kameramann, Fotograf, Historiker, Archeologe, Bodybuilder, Rennradfahrer, Allgemeinwissender, Chef"),
             array(
                 "name" => "Daniel Constantini",
                 "role" => "Abfucker",
@@ -73,7 +72,7 @@
                 "name" => "Ivan Kaser",
                 "role" => "Steuerung-Auto",
                 "image" => "images/Ivi.jpg",
-                "description" => "Hier kann eine Beschreibung von Ivan Kaser stehen."
+                "description" => "Ivan Interribile, der Steuerungsmeister, checkt so viel, wie die Haare eines Glatzkopfes."
             ),
             array(
                 "name" => "Simon Monfrecola",
