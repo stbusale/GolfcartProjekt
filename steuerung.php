@@ -63,17 +63,17 @@
 
 
 <div id="game-container">
-    <div class="key btn btn-primary" id="W" style="width: 100%;">Forward</div>
-    <div class="key btn btn-primary" id="A">Left</div>
-    <div class="key btn btn-primary" id="S">Backward</div>
-    <div class="key btn btn-primary" id="D">Right</div>
-    <div class="key btn btn-primary" id="E">Open</div>
-    <div class="key btn btn-primary" id="R">Close</div>
-    <div class="key btn btn-primary" id="F">Push</div>
-    <div class="key btn btn-primary" id="G">Pull</div>
+    <div class="key btn btn-primary" id="W" style="width: 100%;">Forward | W</div>
+    <div class="key btn btn-primary" id="A">Left | A</div>
+    <div class="key btn btn-primary" id="S">Backward | S</div>
+    <div class="key btn btn-primary" id="D">Right | D</div>
+    <div class="key btn btn-primary" id="E">Open | E</div>
+    <div class="key btn btn-primary" id="R">Close | R</div>
+    <div class="key btn btn-primary" id="F">Push | F</div>
+    <div class="key btn btn-primary" id="G">Pull | G</div>
 </div>
 
-<!-- Bootstrap 5 JS -->
+<!-- Bootstrap 5 JS --> 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script>
@@ -131,7 +131,7 @@
         .catch(error => {
             console.error('There was a problem with your fetch operation:', error);
         });
-    }
+    } 
 </script>
 </body>
 </html>
