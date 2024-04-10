@@ -18,15 +18,32 @@
         color: #fff;
         padding: 10px;
     }
+    #container-wrapper {
+        display: flex;
+        justify-content: space-between; /* Align content with space between */
+        align-items: center; /* Center content vertically */
+        height: 100vh; /* Set container height to full viewport height */
+    }
     #game-container {
-        width: 400px;
-        height: 400px;
+        width: 40%; /* Set game container width to 40% */
+        height: 50%; /* Set game container height to 50% of the viewport height */
         display: flex;
         flex-wrap: wrap;
-        margin: auto; /* Center the game container */
-        margin-top: 10px; /* Add space between menu and game */
         padding: 10px;
         box-sizing: border-box; /* Include padding in width */
+    }
+    #camera-container {
+        width: 60%; /* Set camera container width to 60% */
+        height: 100%; /* Set camera container height to full height */
+        position: relative;
+        overflow: hidden;
+    }
+    #camera-feed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     .key {
         width: calc(33.33% - 20px); /* Each key takes one-third of the container width minus margin */
@@ -41,36 +58,22 @@
     .active {
         background: lightblue;
     }
-    /* Manually position the keys */
-    #E,
-    #F {
-        margin-left: 5px;
-        margin-right: 5px;
-        width: calc(50% - 10px); /* Set width to half the container width minus margin */
-    }
-    #R,
-    #G {
-        margin-right: 5px;
-        width: calc(50% - 10px); /* Set width to half the container width minus margin */
-    }
-    /* Manually add space to WASD */
-    #W, #A, #S, #D {
-        margin-bottom: 10px; /* Add margin to bottom */
-    }
 </style>
 </head>
 <body>
 
-
-<div id="game-container">
-    <div class="key btn btn-primary" id="W" style="width: 100%;">Forward | W</div>
-    <div class="key btn btn-primary" id="A">Left | A</div>
-    <div class="key btn btn-primary" id="S">Backward | S</div>
-    <div class="key btn btn-primary" id="D">Right | D</div>
-    <div class="key btn btn-primary" id="E">Open | E</div>
-    <div class="key btn btn-primary" id="R">Close | R</div>
-    <div class="key btn btn-primary" id="F">Push | F</div>
-    <div class="key btn btn-primary" id="G">Pull | G</div>
+<div id="container-wrapper">
+    <div id="game-container">
+        <div class="key btn btn-primary" id="W" style="width: 100%;">Forward | W</div>
+        <div class="key btn btn-primary" id="A">Left | A</div>
+        <div class="key btn btn-primary" id="S">Backward | S</div>
+        <div class="key btn btn-primary" id="D">Right | D</div>
+        <div class="key btn btn-primary" id="onButton">Einschalten</div>
+        <div class="key btn btn-primary" id="offButton">Ausschalten</div>
+    </div>
+    <div id="camera-container">
+        <img id="camera-feed" src="http://<IP-Adresse-des-Raspberry-Pi>:8081" alt="Camera Feed">
+    </div>
 </div>
 
 <!-- Bootstrap 5 JS --> 
@@ -81,11 +84,7 @@
         W: 'forward',
         A: 'left',
         S: 'backward',
-        D: 'right',
-        E: 'open',
-        R: 'close',
-        F: 'push',
-        G: 'pull'
+        D: 'right'
     };
 
     let lastKeyPressed = '';
@@ -131,7 +130,39 @@
         .catch(error => {
             console.error('There was a problem with your fetch operation:', error);
         });
-    } 
+    }
+
+    // Funktionen zum Ein- und Ausschalten
+    document.getElementById('onButton').addEventListener('click', function() {
+        sendSignal('on');
+    });
+
+    document.getElementById('offButton').addEventListener('click', function() {
+        sendSignal('off');
+    });
+
+    function sendSignal(signal) {
+        console.log('Sent signal:', signal);
+        fetch('http://<IP-Adresse-des-Raspberry-Pi>:3000/signal', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ signal })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+        });
+    }
 </script>
 </body>
 </html>
