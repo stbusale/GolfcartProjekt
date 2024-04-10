@@ -45,9 +45,16 @@ if (session_status() == PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=auto.php">Auto</a>
         </li>
+        <?php
+    // Überprüfen, ob der Benutzer angemeldet ist und die erforderlichen Berechtigungen hat
+    if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
+        // Menüpunkt nur anzeigen, wenn der Benutzer angemeldet ist und die Berechtigungen hat
+        echo '
         <li class="nav-item">
-          <a class="nav-link" href="index.php?page=steuerung.php">Steuerung</a>
-        </li>
+            <a class="nav-link" href="index.php?page=steuerung.php">Steuerung</a>
+        </li>';
+    }
+    ?>
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=kontakt.php">Kontakt</a>
         </li>
