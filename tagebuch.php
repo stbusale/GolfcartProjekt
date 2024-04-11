@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Verbindung zur Datenbank herstellen und alle Einträge abrufen
 $host = 'localhost'; // Ihre Hostadresse
-$dbname = 'Tagebuch'; // Ihr Datenbankname
+$dbname = 'tagebuch'; // Ihr Datenbankname
 $benutzername = 'admin'; // Ihr Datenbank-Benutzername
 $passwort = 'Leumas5002'; // Ihr Datenbank-Passwort
 
