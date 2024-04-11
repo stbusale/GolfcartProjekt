@@ -11,14 +11,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000; /* Hintergrundfarbe auf Schwarz setzen */
+            background-color: #222; /* Hintergrundfarbe auf Schwarz setzen */
             color: #fff; /* Textfarbe auf Weiß setzen */
         }
         .container {
             padding: 20px;
         }
         .component {
-            background-color: #222; /* Hintergrundfarbe für Komponenten */
+            background-color: #111; /* Hintergrundfarbe für Komponenten */
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
@@ -35,6 +35,7 @@
             line-height: 1.6;
         }
     </style>
+    
 </head>
 <body>
     <div class="container">
