@@ -45,6 +45,7 @@
     <div class="row">
         <?php
         $team_members = array(
+            
             array(
                 "name" => "Clemens Obkircher",
                 "role" => "Nichts Macher",
@@ -69,7 +70,6 @@
                 "image" => "images/Samu.jpg",
                 "description" => "Samuel ist ein fähiger Website-Entwickler, der maßgeblich daran beteiligt war, die Website online zu bringen. Seine umfassenden Kenntnisse im Bereich Netzwerke haben dabei geholfen, eine reibungslose Funktionalität zu gewährleisten. Durch sein Engagement, einschließlich Überstunden, hat er sogar das Auto zum Laufen gebracht, was seine Hingabe und Fähigkeiten unterstreicht."
             ),
-            
             array(
                 "name" => "Daniel Constantini",
                 "role" => "Abfucker",
@@ -82,7 +82,6 @@
                 "image" => "images/Ivi.jpg",
                 "description" => "Ivan ist von Anfang an ein leuchtendes Vorbild für unser Team, besonders in seiner Verantwortung für die Steuerung des Autos. Seine Begeisterung für das Projekt ist ansteckend und treibt uns alle an. Mit seinen herausragenden Coding-Fähigkeiten in Python, PHP, JavaScript und C++ sowie seinem fundierten Wissen über verschiedene Frameworks stellt er sicher, dass unsere Arbeit stets auf höchstem Niveau ist. Seine Expertise und sein Engagement sollten als Maßstab für kommende Klassen dienen, und sein Beitrag zum Projekt wird auch in Zukunft unvergessen bleiben."
             )
-            
         );
 
         foreach ($team_members as $member) {
