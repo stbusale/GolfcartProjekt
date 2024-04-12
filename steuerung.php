@@ -102,10 +102,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         A: 'left',
         S: 'backward',
         D: 'right',
-        E: 'open',
-        R: 'close',
-        F: 'push',
-        G: 'pull'
     };
 
     let lastKeyPressed = '';
