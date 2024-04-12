@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite</title>
+    <title>Startseite - Golfcar Challenge</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        /* Fügen Sie hier Ihren benutzerdefinierten CSS-Code hinzu */
+        /* Benutzerdefiniertes CSS */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             padding: 0px;
         }
-        .accordion-item {
-            margin-bottom: 20px;
-        }
         .section {
             padding: 60px 0;
-            background-color: #f8f9fa;
+            background-color: #343a40; /* Dunkler Hintergrund für Abschnitte */
+            color: #fff; /* Weiße Textfarbe */
         }
         .section-heading {
             font-size: 36px;
@@ -31,50 +29,34 @@
             line-height: 1.6;
             margin-bottom: 30px;
         }
+        .bg-dark-custom {
+            background-color: #343a40 !important; /* Dunkle Hintergrundfarbe für Header und Footer */
+        }
+        .text-white-custom {
+            color: #fff !important; /* Weiße Textfarbe für Header und Footer */
+        }
     </style>
 </head>
 <body>
 
 <!-- Header -->
-<header class="bg-dark text-white py-5">
-    <div class="container">
-        <h1 class="display-4">Team ZIB</h1>
-        <p class="lead">Golfcart-Projekt 2024</p>
+<header class="bg-dark-custom text-white-custom py-5">
+    <div class="container text-center">
+        <h1 class="display-4">Willkommen zur Golfcar Challenge 2024</h1>
+        <p class="lead">Ein aufregendes Projekt, bei dem autonome Fahrzeuge auf die Probe gestellt werden</p>
     </div>
-    
 </header>
 
-<!-- Über uns -->
+<!-- Überblick -->
 <section class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h2 class="section-heading">Über Uns</h2>
-                <p class="section-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, metus non efficitur viverra, ligula sapien dapibus enim, ac vestibulum libero lorem nec felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis porta sapien sed est volutpat sodales.</p>
+                <img src="images/logo.png" alt="" class="img-fluid">
             </div>
             <div class="col-lg-6">
-                <img src="images/ueber_uns.jpg" alt="Über Uns" class="img-fluid">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Leistungen -->
-<section class="section">
-    <div class="container">
-        <h2 class="section-heading text-center mb-5">Unsere Leistungen</h2>
-        <div class="row">
-            <div class="col-lg-4">
-                <h3>Webdesign</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, metus non efficitur viverra.</p>
-            </div>
-            <div class="col-lg-4">
-                <h3>Entwicklung</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, metus non efficitur viverra.</p>
-            </div>
-            <div class="col-lg-4">
-                <h3>Marketing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, metus non efficitur viverra.</p>
+                <h2 class="section-heading">Was ist die Golfcar Challenge?</h2>
+                <p class="section-content">Die Golfcar Challenge ist ein spannendes Projekt, bei dem Schülerinnen und Schüler autonome Fahrzeuge entwerfen und bauen, um verschiedene Herausforderungen zu meistern. Das Hauptziel besteht darin, einen Golfball mit dem Fahrzeug auf einem definierten Spielfeld zu finden, zu transportieren und in ein Zielfeld zu bringen. Dabei müssen die Fahrzeuge Hindernisse erkennen und umfahren, sowie autonom navigieren.</p>
             </div>
         </div>
     </div>
@@ -84,7 +66,7 @@
 <section class="section">
     <div class="container">
         <h2 class="section-heading text-center mb-5">Kontakt</h2>
-        <p class="section-content text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, metus non efficitur viverra.</p>
+        <p class="section-content text-center">Für weitere Informationen zur Golfcar Challenge 2024 stehen wir Ihnen gerne zur Verfügung.</p>
         <div class="text-center">
             <a href="kontakt.php" class="btn btn-primary">Kontaktieren Sie uns</a>
         </div>
@@ -92,9 +74,9 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-dark text-white py-4">
+<footer class="bg-dark-custom text-white-custom py-4">
     <div class="container text-center">
-        <p>&copy; 2024 Meine Webseite. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Golfcar Challenge. Alle Rechte vorbehalten.</p>
     </div>
 </footer>
 

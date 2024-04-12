@@ -1,3 +1,18 @@
+<?php
+// Prüfen, ob eine Sitzung noch nicht gestartet wurde
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Überprüfen, ob der Benutzer angemeldet ist
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
+    // Benutzer ist nicht angemeldet oder hat nicht die erforderlichen Berechtigungen
+    // Hier können Sie eine Weiterleitung zur Anmeldeseite oder eine Fehlermeldung einfügen
+    header("Location: index.php"); // Beispiel für eine Weiterleitung zur Index-Seite
+    exit; // Beenden der weiteren Ausführung des Skripts
+}
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -18,32 +33,15 @@
         color: #fff;
         padding: 10px;
     }
-    #container-wrapper {
-        display: flex;
-        justify-content: space-between; /* Align content with space between */
-        align-items: center; /* Center content vertically */
-        height: 100vh; /* Set container height to full viewport height */
-    }
     #game-container {
-        width: 40%; /* Set game container width to 40% */
-        height: 50%; /* Set game container height to 50% of the viewport height */
+        width: 400px;
+        height: 400px;
         display: flex;
         flex-wrap: wrap;
+        margin: auto; /* Center the game container */
+        margin-top: 10px; /* Add space between menu and game */
         padding: 10px;
         box-sizing: border-box; /* Include padding in width */
-    }
-    #camera-container {
-        width: 60%; /* Set camera container width to 60% */
-        height: 100%; /* Set camera container height to full height */
-        position: relative;
-        overflow: hidden;
-    }
-    #camera-feed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
     .key {
         width: calc(33.33% - 20px); /* Each key takes one-third of the container width minus margin */
@@ -57,6 +55,22 @@
     }
     .active {
         background: lightblue;
+    }
+    /* Manually position the keys */
+    #E,
+    #F {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: calc(50% - 10px); /* Set width to half the container width minus margin */
+    }
+    #R,
+    #G {
+        margin-right: 5px;
+        width: calc(50% - 10px); /* Set width to half the container width minus margin */
+    }
+    /* Manually add space to WASD */
+    #W, #A, #S, #D {
+        margin-bottom: 10px; /* Add margin to bottom */
     }
 </style>
 </head>
@@ -87,7 +101,11 @@
         W: 'forward',
         A: 'left',
         S: 'backward',
-        D: 'right'
+        D: 'right',
+        E: 'open',
+        R: 'close',
+        F: 'push',
+        G: 'pull'
     };
 
     let lastKeyPressed = '';

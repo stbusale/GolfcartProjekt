@@ -14,6 +14,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <title>Team ZIB</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+    
     <!-- Custom CSS -->
     <style>
       body {
@@ -45,9 +47,16 @@ if (session_status() == PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=auto.php">Auto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?page=steuerung.php">Steuerung</a>
-        </li>
+        <?php
+        // Überprüfen, ob der Benutzer angemeldet ist und die erforderlichen Berechtigungen hat
+        if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
+            // Menüpunkt nur anzeigen, wenn der Benutzer angemeldet ist und die Berechtigungen hat
+            echo '
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=steuerung.php">Steuerung</a>
+            </li>';
+        }
+        ?>
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=kontakt.php">Kontakt</a>
         </li>
