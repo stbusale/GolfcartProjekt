@@ -72,7 +72,10 @@
         <div class="key btn btn-primary" id="offButton">Ausschalten</div>
     </div>
     <div id="camera-container">
-        <img id="camera-feed" src="http://<IP-Adresse-des-Raspberry-Pi>:8081" alt="Camera Feed">
+        <video id="camera-feed" autoplay controls>
+            <source src="video_stream.php" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 
@@ -111,7 +114,7 @@
 
     function sendData(command) {
         console.log('Sent command:', command);
-        fetch('http://10.10.30.126:3000/keypress', {
+        fetch('http://10.10.30.137:3000/keypress', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -143,7 +146,7 @@
 
     function sendSignal(signal) {
         console.log('Sent signal:', signal);
-        fetch('http://<IP-Adresse-des-Raspberry-Pi>:3000/signal', {
+        fetch('http://10.10.30.137:3000/signal', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
