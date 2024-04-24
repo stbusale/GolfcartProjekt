@@ -10,7 +10,7 @@
 <body>
 
 <header>
-    <div class="container">
+    <div class="fade-in">
         <h1 class="main-title">Golfcart Projekt 2024</h1>
     </div>
 </header>
@@ -34,46 +34,8 @@
     </div>
 </section>
 
-<!-- Kontakt -->
-<footer class="fade-in">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h2 class="section-heading">Kontakt</h2>
-                <p class="section-content">Für weitere Informationen zur Golfcar Challenge 2024 stehen wir Ihnen gerne zur Verfügung.</p>
-                <a href="kontakt.php" class="contact-btn">Kontaktieren Sie uns</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-
-<!-- JavaScript für die Scroll-Animation -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const fadeIns = document.querySelectorAll('.fade-in');
-
-    function checkPosition() {
-        fadeIns.forEach(fadeIn => {
-            const positionFromTop = fadeIn.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
-            if (positionFromTop - windowHeight < 0) {
-                fadeIn.classList.add('active');
-            }
-        });
-    }
-
-    // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
-    window.addEventListener('scroll', checkPosition);
-    
-    // Überprüfe beim Laden der Seite die Position
-    checkPosition();
-});
-</script>
 
 </body>
 </html>

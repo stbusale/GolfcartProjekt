@@ -1,0 +1,65 @@
+/* styles/team.css */
+
+/* Globale Stile */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.team-member {
+    margin-bottom: 40px;
+}
+
+.member-image {
+    text-align: center;
+}
+
+.member-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Bilder bleiben innerhalb der Elternbreite */
+    aspect-ratio: 1; /* Stellt sicher, dass die Bilder quadratisch bleiben */
+    border-radius: 10px; /* Abgerundete Ecken für die Bilder */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member-details {
+    padding: 20px;
+    overflow: auto; /* Bei Bedarf scrollbare Beschreibung */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 550px;/*calc(100% - 20px); *//* 20px weniger als die Höhe des Textbereichs */ 
+}
+
+.team-member-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.team-member-details p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.text-muted {
+    color: #666;
+}
+
+/* Fade-In-Effekt *//*
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+*/

@@ -75,43 +75,35 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            padding: 0px;
-        }
-        .accordion-item {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link href="styles/startseite.css" rel="stylesheet">
 </head>
+
+<header>
+    <div class="fade-in">
+        <h1 class="main-title">Tagebuch</h1>
+    </div>
+</header>
+
 <body>
     <div class="container">
-        <h1 class="mt-5">Einträge verwalten</h1>
 
-        <div class="accordion mt-3" id="accordionExample">
             <!-- Alle Einträge -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Alle Einträge
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
-                        <ul class="list-group">
-                            <?php foreach ($entries as $entry): ?>
-                                <li class="list-group-item">Datum: <?php echo $entry['datum']; ?> - Eintrag: <?php echo $entry['eintrag']; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+            <div class="fade-in container">
+                    <h2 class="" >
+                    </h2>
+                    <div class="container" aria-labelledby="headingOne">
+                        <div class="container">
+                            <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
+                            <ul class="list-group">
+                                <?php foreach ($entries as $entry): ?>
+                                    <li class="list-group-item"><?php echo $entry['datum']; ?> - <?php echo $entry['eintrag']; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+
+        <div class="accordion mt-3" id="accordionExample">
             <?php if(isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
             <!-- Neuen Eintrag hinzufügen -->
             <div class="accordion-item">

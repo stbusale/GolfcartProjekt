@@ -96,7 +96,46 @@ if (session_status() == PHP_SESSION_NONE) {
     ?>
 </div>
 
+<footer class="fade-in">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="section-heading">Kontakt</h2>
+                <p class="section-content">Für weitere Informationen zur Golfcar Challenge 2024 stehen wir Ihnen gerne zur Verfügung.</p>
+                <a href="index.php?page=kontakt.php" class="contact-btn">Kontaktieren Sie uns</a>
+                <p class="footer-copyright">&copy; Team ZIB 2024</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeIns = document.querySelectorAll('.fade-in');
+
+            function checkPosition() {
+                for (let i = 0; i < fadeIns.length; i++) {
+                    const fadeIn = fadeIns[i];
+                    const positionFromTop = fadeIn.getBoundingClientRect().top;
+
+                    // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
+                    if (positionFromTop - window.innerHeight < 0) {
+                        fadeIn.classList.add('active');
+                    }
+                }
+            }
+
+            // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
+            window.addEventListener('scroll', checkPosition);
+            
+            // Überprüfe beim Laden der Seite die Position
+            checkPosition();
+        });
+    </script>
+
 </body>
 </html>

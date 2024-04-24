@@ -11,7 +11,7 @@
 </head>
 
 <header>
-    <div class="container">
+    <div class="fade-in">
         <h1 class="main-title">Auto Komponenten</h1>
     </div>
 </header>
@@ -89,31 +89,10 @@
             <img src="imagesAuto/Sensoren.png" alt="Ultraschallsensor" class="img-fluid">
         </div>
     </div>
+    
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript für Scroll-Effekt -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const components = document.querySelectorAll(".component");
-
-            const fadeInElements = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                    }
-                });
-            };
-
-            const observer = new IntersectionObserver(fadeInElements, {
-                root: null,
-                threshold: 0.2
-            });
-
-            components.forEach(component => {
-                observer.observe(component);
-            });
-        });
-    </script>
+ 
 </body>
 </html>

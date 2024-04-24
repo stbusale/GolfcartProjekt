@@ -37,19 +37,27 @@ footer {
     background-color: #343a40;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+}
+.footer-copyright {
+    font-size: 14px;
+    display: block; /* Stellt sicher, dass das Copyright-Element ein Block-Element ist */
+    margin-top: 30px; /* Abstand über dem Copyright-Element */
 }
 .contact-btn {
     font-size: 18px;
     text-decoration: none;
     padding: 10px 20px;
     color: #fff;
-    background-color: #007bff;
+    background-color: #b26aff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+button{
+    background-color: #333;
+}
 .contact-btn:hover {
-    background-color: #b26aff;
+    background-color: #801aed;
 }
 
 /* styles/startseite.css */
