@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="images/icon.png" type="image/x-icon">
-    
+    <link href="styles/menustyle.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
       body {
@@ -32,7 +32,8 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Team ZIB</a>
+  <a class="navbar-brand" href="index.php" style="display: inline-block; width: 75px; height: 25px; background-image: url('images/logo.png'); background-size: contain; background-repeat: no-repeat;"></a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
