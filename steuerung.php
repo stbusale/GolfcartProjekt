@@ -56,18 +56,8 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     .active {
         background: lightblue;
     }
-    /* Manually position the keys */
-    #E,
-    #F {
-        margin-left: 5px;
-        margin-right: 5px;
-        width: calc(50% - 10px); /* Set width to half the container width minus margin */
-    }
-    #R,
-    #G {
-        margin-right: 5px;
-        width: calc(50% - 10px); /* Set width to half the container width minus margin */
-    }
+    
+    
     /* Manually add space to WASD */
     #W, #A, #S, #D {
         margin-bottom: 10px; /* Add margin to bottom */
@@ -87,7 +77,8 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     </div>
     <div id="camera-container">
         <video id="camera-feed" autoplay controls>
-            <source src="video_stream.php" type="video/mp4">
+            <!-- Hier sollte der Quellpfad des Videos sein -->
+            <source src="http://10.10.30.137:8081" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
