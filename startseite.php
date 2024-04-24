@@ -4,66 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startseite - Golfcar Challenge</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #343a40;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .main-title {
-            font-size: 36px;
-            /*font-weight: bold;*/
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-        .section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .section-heading {
-            font-size: 36px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-        .section-content {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .contact-btn {
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #007bff;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .contact-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link href="styles/startseite.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- Header -->
 <header>
     <div class="container">
         <h1 class="main-title">Golfcart Projekt 2024</h1>
@@ -71,9 +16,15 @@
 </header>
 
 <!-- Gruppenbild -->
-<section class="section">
+<section class="section fade-in">
     <div class="container">
         <img src="images/gruppenbild.jpg" alt="Gruppenbild" class="img-fluid mb-4">
+    </div>
+</section>
+
+<!-- Willkommensabschnitt -->
+<section class="section fade-in">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h2 class="section-heading">Willkommen zur Golfcar Challenge</h2>
@@ -84,7 +35,7 @@
 </section>
 
 <!-- Kontakt -->
-<footer>
+<footer class="fade-in">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -98,5 +49,31 @@
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript für die Scroll-Animation -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeIns = document.querySelectorAll('.fade-in');
+
+    function checkPosition() {
+        fadeIns.forEach(fadeIn => {
+            const positionFromTop = fadeIn.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
+            if (positionFromTop - windowHeight < 0) {
+                fadeIn.classList.add('active');
+            }
+        });
+    }
+
+    // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
+    window.addEventListener('scroll', checkPosition);
+    
+    // Überprüfe beim Laden der Seite die Position
+    checkPosition();
+});
+</script>
+
 </body>
 </html>

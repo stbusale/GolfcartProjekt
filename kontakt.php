@@ -6,12 +6,13 @@
     <title>Kontakt</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <!--<link href="style.css" rel="stylesheet">-->
 
     <style>
       body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            /*background-color: #f0f0f0;*/
+            background-color: #b26aff;
             padding: 0px;
         }
         .accordion-item {
