@@ -3,10 +3,30 @@ session_start();
 
 // Überprüfen, ob das Formular abgeschickt wurde
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Benutzername und Passwort überprüfen
-    if ($_POST['username'] === 'admin' && $_POST['password'] === 'Leumas5002') {
+    // Verbindung zur Datenbank herstellen
+    $servername = "localhost";
+    $username_db = "admin";
+    $password_db = "Kennwort0";
+    $dbname = "users"; // Name der Datenbank, in der Benutzer gespeichert sind
+
+    $conn = mysqli_connect($servername, $username_db, $password_db, $dbname);
+
+    // Überprüfen, ob die Verbindung erfolgreich hergestellt wurde
+    if (!$conn) {
+        die("Verbindung fehlgeschlagen: " . mysqli_connect_error());
+    }
+
+    // Benutzername und Passwort aus dem Formular abrufen
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // SQL-Abfrage vorbereiten und ausführen
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
         // Anmeldung erfolgreich, Sitzungsvariable setzen
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['username'] = $username;
         // Weiterleitung zur Startseite
         header("location: index.php");
         exit;
@@ -14,6 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Anmeldung fehlgeschlagen
         $error = "Ungültiger Benutzername oder Passwort";
     }
+
+    // Verbindung schließen
+    mysqli_close($conn);
 }
 ?>
 
