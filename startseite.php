@@ -23,7 +23,7 @@
         }
         .main-title {
             font-size: 36px;
-            font-weight: bold;
+            /*font-weight: bold;*/
             margin-top: 10px;
             text-transform: uppercase;
         }
