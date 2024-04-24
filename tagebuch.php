@@ -18,7 +18,7 @@ try {
     $stmt = $pdo->query("SELECT * FROM Einträge");
     $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
-    die("Verbindung zur Datenbank fehlgeschlagen: " . $e->getMessage());
+    die("Verbindung zur Datenbank fehlgeschlagen ");
 }
 
 // Überprüfen, ob Benutzer angemeldet ist
