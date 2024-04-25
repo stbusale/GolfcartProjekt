@@ -6,8 +6,9 @@
     <title>Unser Team</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <!-- Separate CSS-Datei für Team-Stile -->
     <link href="styles/team.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="styles/startseite.css" rel="stylesheet">
 </head>
 
@@ -26,7 +27,6 @@
         <div class="fade-in col-md-8 offset-md-2">
             <h2 class="section-heading text-center">Das sind wir!</h2>
             <p class="section-content text-center">Unser Team ist eine dynamische Gruppe von kreativen Köpfen, die sich leidenschaftlich für technologische Innovationen engagieren. Wir vereinen ein breites Spektrum an Fähigkeiten und Fachwissen, um gemeinsam an aufregenden Projekten zu arbeiten. Von Hardware-Entwicklung über Software-Engineering bis hin zur Webgestaltung bringen wir vielfältige Talente und Perspektiven ein, um innovative Lösungen zu entwickeln. Unsere Zusammenarbeit ist geprägt von Enthusiasmus, Teamgeist und dem Streben nach Exzellenz. Wir sind stolz darauf, unsere Ideen in die Realität umzusetzen und gemeinsam technologische Herausforderungen zu meistern. Bleiben Sie gespannt auf unsere kommenden Projekte und Entwicklungen!</p>
-            
         </div>
     </div>
     <div class="mt-5">
@@ -77,8 +77,8 @@
             )
         );
 
-        foreach ($team_members as $member) {
-            echo '<div class="col-lg-4 team-member fade-in">';
+        foreach ($team_members as $index => $member) {
+            echo '<div class="col-lg-4 team-member fade-in" style="animation-delay: ' . ($index * 0.2) . 's;">'; // Verzögerung für Animation
             echo '<div class="member-image">';
             echo '<img src="' . $member['image'] . '" alt="' . $member['name'] . '" class="img-fluid">';
             echo '</div>';
@@ -93,8 +93,30 @@
     </div>
 </div>
 
-<!-- Bootstrap Bundle with Popper -->
+<!-- Bootstrap Bundle mit Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript für den Fade-In-Effekt -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
 
 </body>
 </html>
