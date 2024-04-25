@@ -22,13 +22,13 @@
 <body>
 
 <header>
-    <div class="fade-in">
+    <div class="fade-in zoom">
         <h1 class="main-title">Golfcart Projekt 2024</h1>
     </div>
 </header>
 
 <!-- Bootstrap Carousel für Diashow -->
-<section class="section fade-in">
+<section class="section fade-in zoom">
     <div class="container">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"> <!-- Wechselintervall in Millisekunden -->
             <div class="carousel-inner">
@@ -53,7 +53,7 @@
 </section>
 
 <!-- Willkommensabschnitt -->
-<section class="section fade-in">
+<section class="section fade-in zoom">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -65,7 +65,7 @@
 </section>
 
 <!-- Video-Abschnitt -->
-<section id="videoContainer" class="section fade-in">
+<section id="videoContainer" class="section fade-in zoom">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -102,6 +102,14 @@
         }, { threshold: 0.1 }); // Trigger, wenn mindestens 10% des Videos sichtbar sind
 
         observer.observe(videoContainer); // Video-Container überwachen
+    });
+</script>
+
+<script>
+    // JavaScript für den Zoom-Effekt beim Laden der Seite
+    document.addEventListener('DOMContentLoaded', function() {
+        var title = document.querySelector('.main-title');
+        title.classList.add('zoom-in'); // Füge Klasse für Zoom-Effekt hinzu
     });
 </script>
 

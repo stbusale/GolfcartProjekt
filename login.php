@@ -1,45 +1,3 @@
-<?php
-session_start();
-
-// Überprüfen, ob das Formular abgeschickt wurde
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verbindung zur Datenbank herstellen
-    $servername = "localhost";
-    $username_db = "admin";
-    $password_db = "Kennwort0";
-    $dbname = "users"; // Name der Datenbank, in der Benutzer gespeichert sind
-
-    $conn = mysqli_connect($servername, $username_db, $password_db, $dbname);
-
-    // Überprüfen, ob die Verbindung erfolgreich hergestellt wurde
-    if (!$conn) {
-        die("Verbindung fehlgeschlagen: " . mysqli_connect_error());
-    }
-
-    // Benutzername und Passwort aus dem Formular abrufen
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // SQL-Abfrage vorbereiten und ausführen
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Anmeldung erfolgreich, Sitzungsvariable setzen
-        $_SESSION['username'] = $username;
-        // Weiterleitung zur Startseite
-        header("location: index.php");
-        exit;
-    } else {
-        // Anmeldung fehlgeschlagen
-        $error = "Ungültiger Benutzername oder Passwort";
-    }
-
-    // Verbindung schließen
-    mysqli_close($conn);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -72,6 +30,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" id="password" name="password" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Anmelden</button>
+            <?php
+            session_start();
+
+            // Überprüfe, ob das Formular gesendet wurde
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Überprüfe Benutzername und Passwort
+                if ($_POST['username'] === 'admin' && $_POST['password'] === 'Leumas5002') {
+                    // Benutzerdaten sind korrekt, starte die Session
+                    $_SESSION['username'] = $_POST['username'];
+                    $_SESSION['password'] = $_POST['password'];
+
+                    // Weiterleitung zur Startseite oder einer anderen Seite
+                    header("Location: index.php?page=startseite.php"); // Passe die URL an
+                    exit; // Beende das Skript nach der Weiterleitung
+                } else {
+                    // Falsche Anmeldedaten
+                    $error = "Falscher Benutzername oder Passwort. Bitte versuchen Sie es erneut.";
+                }
+            }
+            ?>
             <?php if(isset($error)) { ?>
                 <div class="text-danger"><?php echo $error; ?></div>
             <?php } ?>
@@ -80,27 +58,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const fadeIns = document.querySelectorAll('.fade-in');
+    document.addEventListener("DOMContentLoaded", function() {
+        const fadeIns = document.querySelectorAll('.fade-in');
 
-            function checkPosition() {
-                for (let i = 0; i < fadeIns.length; i++) {
-                    const fadeIn = fadeIns[i];
-                    const positionFromTop = fadeIn.getBoundingClientRect().top;
+        function checkPosition() {
+            for (let i = 0; i < fadeIns.length; i++) {
+                const fadeIn = fadeIns[i];
+                const positionFromTop = fadeIn.getBoundingClientRect().top;
 
-                    // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
-                    if (positionFromTop - window.innerHeight < 0) {
-                        fadeIn.classList.add('active');
-                    }
+                // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
+                if (positionFromTop - window.innerHeight < 0) {
+                    fadeIn.classList.add('active');
                 }
             }
+        }
 
-            // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
-            window.addEventListener('scroll', checkPosition);
-            
-            // Überprüfe beim Laden der Seite die Position
-            checkPosition();
-        });
-    </script>
+        // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
+        window.addEventListener('scroll', checkPosition);
+        
+        // Überprüfe beim Laden der Seite die Position
+        checkPosition();
+    });
+</script>
 
 </html>

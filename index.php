@@ -134,28 +134,30 @@ if (session_status() == PHP_SESSION_NONE) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const fadeIns = document.querySelectorAll('.fade-in');
+    document.addEventListener("DOMContentLoaded", function() {
+        const fadeIns = document.querySelectorAll('.fade-in');
+        const zooms = document.querySelectorAll('.zoom');
 
-            function checkPosition() {
-                for (let i = 0; i < fadeIns.length; i++) {
-                    const fadeIn = fadeIns[i];
-                    const positionFromTop = fadeIn.getBoundingClientRect().top;
-
-                    // Trigger Animation, wenn das Element fast im sichtbaren Bereich ist
-                    if (positionFromTop - window.innerHeight < 0) {
-                        fadeIn.classList.add('active');
-                    }
+        function checkPosition() {
+            fadeIns.forEach(function(element) {
+                const positionFromTop = element.getBoundingClientRect().top;
+                if (positionFromTop < window.innerHeight) {
+                    element.classList.add('active');
                 }
-            }
+            });
 
-            // Event Listener hinzufügen, um beim Scrollen die Position zu überprüfen
-            window.addEventListener('scroll', checkPosition);
-            
-            // Überprüfe beim Laden der Seite die Position
-            checkPosition();
-        });
-    </script>
+            zooms.forEach(function(element) {
+                const positionFromTop = element.getBoundingClientRect().top;
+                if (positionFromTop < window.innerHeight) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkPosition);
+        checkPosition(); // Überprüfe beim Laden der Seite die Position
+    });
+</script>
 
     <script>
         // JavaScript, um das aktive Menüelement zu markieren

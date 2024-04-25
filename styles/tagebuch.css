@@ -1,0 +1,25 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.entry {
+    padding: 15px;
+}

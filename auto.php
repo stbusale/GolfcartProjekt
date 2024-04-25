@@ -11,7 +11,7 @@
 </head>
 
 <header>
-    <div class="fade-in">
+    <div class="fade-in zoom">
         <h1 class="main-title">Auto Komponenten</h1>
     </div>
 </header>
@@ -19,7 +19,7 @@
     <div class="container">
         
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Servomotoren</h2>
                 <p>
@@ -29,7 +29,7 @@
             <img src="imagesAuto/Servomotoren.png" alt="Servomotoren" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Raspberry Pi 4</h2>
                 <p>
@@ -39,7 +39,7 @@
             <img src="imagesAuto/Rasperry.png" alt="Raspberry Pi 4" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Motoren</h2>
                 <p>
@@ -49,7 +49,7 @@
             <img src="imagesAuto/Motoren.png" alt="Motoren" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>SSD (32GB)</h2>
                 <p>
@@ -59,7 +59,7 @@
             <img src="imagesAuto/SSD.png" alt="SSD (32GB)" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Reifen</h2>
                 <p>
@@ -69,7 +69,7 @@
             <img src="imagesAuto/Reifen.png" alt="Reifen" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Step-down Modul</h2>
                 <p>
@@ -79,7 +79,7 @@
             <img src="imagesAuto/Step-Down_Modul.png" alt="Step-down Modul" class="img-fluid">
         </div>
 
-        <div class="component fade-in">
+        <div class="component fade-in zoom">
             <div class="description">
                 <h2>Ultraschallsensor</h2>
                 <p>

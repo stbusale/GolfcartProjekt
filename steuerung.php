@@ -23,10 +23,10 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <title>Meine Seite mit Menüleiste und WASD Steuerung</title>
 <!-- Bootstrap 5 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+<link href="styles/startseite.css" rel="stylesheet">
 
 <style>
-    body {
+    /*body {
         margin: 0;
         padding: 0;
     }
@@ -34,7 +34,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         background-color: #333;
         color: #fff;
         padding: 10px;
-    }
+    }*/
     #game-container {
         width: 400px;
         height: 400px;
@@ -54,10 +54,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         align-items: center;
         font-size: 24px;
         margin: 5px; /* Add margin to all keys */
-    }
-    .active {
-        background: lightblue;
-    }
+    }/*
     
     
     /* Manually add space to WASD */
@@ -69,15 +66,15 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <body>
 
 <div id="container-wrapper">
-    <div id="game-container">
-        <div class="key btn btn-primary" id="W" style="width: 100%;">Forward | W</div>
-        <div class="key btn btn-primary" id="A">Left | A</div>
-        <div class="key btn btn-primary" id="S">Backward | S</div>
-        <div class="key btn btn-primary" id="D">Right | D</div>
-        <div class="key btn btn-primary" id="onButton">Einschalten</div>
-        <div class="key btn btn-primary" id="offButton">Ausschalten</div>
+    <div class="fade-in zoom" id="game-container">
+        <div class="key btn btn-primary" id="W" style="width: 100%;">FORWARD | W</div>
+        <div class="key btn btn-primary" id="A">LEFT | A</div>
+        <div class="key btn btn-primary" id="S">BACK | S</div>
+        <div class="key btn btn-primary" id="D">RIGHT | D</div>
+        <div class="key btn btn-primary" id="onButton">ON</div>
+        <div class="key btn btn-primary" id="offButton">OFF</div>
     </div>
-    <div id="camera-container">
+    <div class="fade-in zoom" id="camera-container">
         <video id="camera-feed" autoplay controls>
             <!-- Hier sollte der Quellpfad des Videos sein -->
             <source src="http://10.10.30.137:8081" type="video/mp4">

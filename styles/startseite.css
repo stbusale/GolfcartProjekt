@@ -60,15 +60,39 @@ button{
     background-color: #801aed;
 }
 
-/* styles/startseite.css */
+/* Stil für Fade-In-Effekt */
 .fade-in {
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1.4s ease;
 }
 
+/* Stil für Zoom-Effekt */
+.zoom {
+    transform: scale(0.7);
+    transition: transform 1.4s ease;
+}
+
+/* Stil für aktive Elemente (sichtbar) mit Fade-In-Effekt */
 .fade-in.active {
     opacity: 1;
 }
+
+
+
+/* Stil für Fade-In- und Zoom-Effekt */
+.fade-in.zoom {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+/* Stil für aktive Elemente (sichtbar) mit Fade-In- und Zoom-Effekt */
+.fade-in.zoom.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
 
 /* Alle Bilder in der Diashow auf 16:9 Format und 100% Breite */
 #imageCarousel .carousel-item img {

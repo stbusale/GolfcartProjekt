@@ -11,7 +11,7 @@
 </head>
 
 <header>
-    <div class="fade-in">
+    <div class="fade-in zoom">
         <h1 class="main-title">Kontakt</h1>
     </div>
 </header>
@@ -23,7 +23,7 @@
 <section class="section">
     <div class="container">
         <div class="row">
-            <div class="fade-in col-lg-6">
+            <div class="fade-in zoom col-lg-6">
                 <h2 class="section-heading">Kontaktieren Sie uns</h2>
                 <form action="mailto:stobkcle@bx.fallmerayer.it" method="post" enctype="text/plain">
                     <div class="mb-3">
@@ -41,7 +41,7 @@
                     <button type="submit" class="btn btn-secondary" style="background-color: #333; color: #fff;">Senden</button>
                 </form>
             </div>
-            <div class="fade-in col-lg-6">
+            <div class="fade-in zoom col-lg-6">
                 <h2 class="section-heading">Kontaktdaten</h2>
                 <p class="lead">E-Mail: Clemens Obkircher</a></p>
                 <p class="lead">E-Mail: <a href="mailto:stobkcle@bx.fallmerayer.it">stobkcle@bx.fallmerayer.it</a></p>

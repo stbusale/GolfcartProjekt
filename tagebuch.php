@@ -22,10 +22,8 @@ try {
 }
 
 // Überprüfen, ob Benutzer angemeldet ist
-if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
-    // Weiterleitung zur Index-Seite
-    /*header("location: index.php");
-    exit;*/
+if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SESSION['password'] !== 'Leumas5002')) {
+    
 } else {
     // Neue Einträge hinzufügen
     if (isset($_POST['submit_new'])) {
@@ -76,10 +74,11 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="styles/startseite.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tagebuch.css" class="styles">
 </head>
 
 <header>
-    <div class="fade-in">
+    <div class="fade-in zoom">
         <h1 class="main-title">Tagebuch</h1>
     </div>
 </header>
@@ -87,21 +86,25 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <body>
     <div class="container">
 
-            <!-- Alle Einträge -->
-            <div class="fade-in container">
-                    <h2 class="" >
-                    </h2>
-                    <div class="container" aria-labelledby="headingOne">
-                        <div class="container">
-                            <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
-                            <ul class="list-group">
-                                <?php foreach ($entries as $entry): ?>
-                                    <li class="list-group-item"><?php echo $entry['datum']; ?> - <?php echo $entry['eintrag']; ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+           <!-- Alle Einträge -->
+<div class="fade-in zoom container">
+    <div class="container" aria-labelledby="headingOne">
+        <div class="container">
+            <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
+            <ul class="list-group">
+                <?php foreach ($entries as $entry): ?>
+                    <li class="list-group-item">
+                        <div class="entry">
+                            <span class="date"><?php echo $entry['datum']; ?></span>
+                            <p><?php echo $entry['eintrag']; ?></p>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
         <div class="accordion mt-3" id="accordionExample">
             <?php if(isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
