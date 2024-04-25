@@ -8,12 +8,14 @@
     <link href="styles/startseite.css" rel="stylesheet">
 
     <style>
-        /* Alle Bilder in der Diashow auf 16:9 Format und 100% Breite */
-        #imageCarousel .carousel-item img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9; /* Festlegen des Seitenverhältnisses 16:9 */
-            object-fit: cover;
+        /* Stile für das Video-Container */
+        #videoContainer {
+            margin-top: 50px; /* Abstand vom oberen Bereich */
+        }
+        #videoContainer video {
+            width: 100%; /* Vollständige Breite des Containers */
+            height: auto; /* Automatische Höhe basierend auf dem Seitenverhältnis */
+            display: block; /* Anzeige als Blockelement */
         }
     </style>
 </head>
@@ -28,13 +30,13 @@
 <!-- Bootstrap Carousel für Diashow -->
 <section class="section fade-in">
     <div class="container">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"> <!-- Wechselintervall in Millisekunden -->
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"> <!-- Wechselintervall in Millisekunden -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/gruppenbild.jpg" class="d-block w-100" alt="Gruppenbild">
+                    <img src="images/golfcart.jpg" class="d-block w-100" alt="Gruppenbild">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/sponsor.jpg" class="d-block w-100" alt="Sponsor">
+                    <img src="images/clemens.jpg" class="d-block w-100" alt="Sponsor">
                 </div>
                 <!-- Weitere Bilder können hier hinzugefügt werden -->
             </div>
@@ -62,8 +64,46 @@
     </div>
 </section>
 
+<!-- Video-Abschnitt -->
+<section id="videoContainer" class="section fade-in">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <video id="mainVideo" controls loop muted>
+                    <source src="videos/video.mp4" type="video/mp4">
+                    <!-- Fallback für ältere Browser ohne HTML5-Video-Unterstützung -->
+                    Ihr Browser unterstützt das Video-Tag nicht.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Bootstrap Bundle mit Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // JavaScript für das Video-Autoplay und Ton beim Scrollen
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.getElementById('mainVideo');
+        var videoContainer = document.getElementById('videoContainer');
+
+        // Intersection Observer, um die Sichtbarkeit des Videos zu überwachen
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.intersectionRatio > 0) {
+                    video.play(); // Video abspielen, wenn es im Bild ist
+                    video.muted = false; // Ton einschalten
+                } else {
+                    video.pause(); // Video anhalten, wenn es nicht im Bild ist
+                    video.muted = true; // Ton ausschalten
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger, wenn mindestens 10% des Videos sichtbar sind
+
+        observer.observe(videoContainer); // Video-Container überwachen
+    });
+</script>
 
 </body>
 </html>

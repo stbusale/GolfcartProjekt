@@ -69,3 +69,11 @@ button{
 .fade-in.active {
     opacity: 1;
 }
+
+/* Alle Bilder in der Diashow auf 16:9 Format und 100% Breite */
+#imageCarousel .carousel-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Festlegen des Seitenverhältnisses 16:9 */
+    object-fit: cover;
+}
