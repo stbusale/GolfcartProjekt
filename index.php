@@ -18,13 +18,17 @@ if (session_status() == PHP_SESSION_NONE) {
     <link href="styles/menustyle.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-      body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             padding: 0px;
         }
         .accordion-item {
             margin-bottom: 20px;
+        }
+        /* Aktives Menüelement-Styling */
+        .navbar-nav .nav-item.active .nav-link {
+            color: #b26aff; /* Farbe für aktiven Navigationslink */
         }
     </style>
 </head>
@@ -61,6 +65,11 @@ if (session_status() == PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link" href="index.php?page=kontakt.php">Kontakt</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.progress.cc/de/" target="_blank">Sponsor</a>
+        </li>
+
       </ul>
 
       <?php
@@ -107,7 +116,18 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="https://www.progress.cc/de/" target="_blank">
+                    <img src="images/sponsor.jpg" alt="Sponsor" style="max-width: 200px; height: auto;">
+                </a>
+            </div>
+        </div>
+    </div>
 </footer>
+
 
 
 <!-- Bootstrap Bundle with Popper -->
@@ -134,6 +154,20 @@ if (session_status() == PHP_SESSION_NONE) {
             
             // Überprüfe beim Laden der Seite die Position
             checkPosition();
+        });
+    </script>
+
+    <script>
+        // JavaScript, um das aktive Menüelement zu markieren
+        document.addEventListener("DOMContentLoaded", function() {
+            const currentPage = "<?php echo $page; ?>";
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `index.php?page=${currentPage}`) {
+                    link.parentElement.classList.add('active'); // Füge 'active' zur Elternklasse hinzu
+                }
+            });
         });
     </script>
 

@@ -10,7 +10,7 @@ body {
 }
 
 .team-member {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .member-image {
@@ -25,6 +25,10 @@ body {
     border-radius: 10px; /* Abgerundete Ecken für die Bilder */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+}
+
+.members-section {
+    margin-bottom: 20px; /* Fügen Sie den gewünschten Abstand hinzu */
 }
 
 .team-member-details {
@@ -51,15 +55,3 @@ body {
     color: #666;
 }
 
-/* Fade-In-Effekt *//*
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-*/

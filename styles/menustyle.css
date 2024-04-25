@@ -5,3 +5,7 @@
 .navbar-brand:hover, .navbar-nav .nav-link:hover {
     color: #b26aff; /* Farbe für Navigationslinks beim Hover */
 }
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #b26aff; /* Farbe für aktiven Navigationslink */
+}

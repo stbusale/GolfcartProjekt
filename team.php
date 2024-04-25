@@ -11,18 +11,32 @@
     <link href="styles/startseite.css" rel="stylesheet">
 </head>
 
+<body>
+
 <header>
     <div class="fade-in">
         <h1 class="main-title">Unser Team</h1>
     </div>
 </header>
 
-<body>
-
 <div class="container mt-5">
 
-    <!-- Teammitglieder -->
+    <!-- Zusätzlicher Text über das Team -->
     <div class="row">
+        <div class="fade-in col-md-8 offset-md-2">
+            <h2 class="section-heading text-center">Das sind wir!</h2>
+            <p class="section-content text-center">Unser Team ist eine dynamische Gruppe von kreativen Köpfen, die sich leidenschaftlich für technologische Innovationen engagieren. Wir vereinen ein breites Spektrum an Fähigkeiten und Fachwissen, um gemeinsam an aufregenden Projekten zu arbeiten. Von Hardware-Entwicklung über Software-Engineering bis hin zur Webgestaltung bringen wir vielfältige Talente und Perspektiven ein, um innovative Lösungen zu entwickeln. Unsere Zusammenarbeit ist geprägt von Enthusiasmus, Teamgeist und dem Streben nach Exzellenz. Wir sind stolz darauf, unsere Ideen in die Realität umzusetzen und gemeinsam technologische Herausforderungen zu meistern. Bleiben Sie gespannt auf unsere kommenden Projekte und Entwicklungen!</p>
+            
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="fade-in col-md-8 offset-md-2">
+            <h2 class="section-heading text-center">Mitglieder:</h2>
+        </div>
+    </div>
+
+    <!-- Teammitglieder -->
+    <div class="row mt-5">
         <?php
         $team_members = array(
             array(
@@ -78,7 +92,6 @@
         ?>
     </div>
 </div>
-
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,4 +1,5 @@
 <?php
+
 // Prüfen, ob eine Sitzung noch nicht gestartet wurde
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -11,6 +12,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     header("Location: index.php"); // Beispiel für eine Weiterleitung zur Index-Seite
     exit; // Beenden der weiteren Ausführung des Skripts
 }
+
 ?>
 
 <!DOCTYPE html>
