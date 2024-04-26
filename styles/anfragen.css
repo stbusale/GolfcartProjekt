@@ -1,0 +1,17 @@
+/* anfragen.css */
+body {
+    padding-top: 20px;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.btn-danger {
+    color: #fff;
+}
+
+.table-responsive {
+    margin-bottom: 20px;
+}

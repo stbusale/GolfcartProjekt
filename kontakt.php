@@ -25,7 +25,7 @@
         <div class="row">
             <div class="fade-in zoom col-lg-6">
                 <h2 class="section-heading">Kontaktieren Sie uns</h2>
-                <form action="mailto:stobkcle@bx.fallmerayer.it" method="post" enctype="text/plain">
+                <form action="process_form.php" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -51,6 +51,33 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        fetch('process_form.php', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result === 'success') {
+                alert('Vielen Dank für Ihre Mitteilung! Wir werden uns innerhalb 48h bei Ihnen melden!');
+                form.reset(); // Optional: Das Formular zurücksetzen
+            } else {
+                alert('Fehler beim Speichern der Daten.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Fehler beim Speichern der Daten.');
+        });
+    });
+});
+</script>
+
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
