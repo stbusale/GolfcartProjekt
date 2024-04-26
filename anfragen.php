@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 </head>
 
 <header>
-    <div class="fade-in zoom">
+    <div class="fade-in zoom no-select">
         <h1 class="main-title">Anfragen</h1>
     </div>
 </header>
@@ -99,8 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
             </table>
         </div>
     </div>
+
     <div class="fade-in zoom text-center">
-        <img src="images/anfragen.png" alt="Anfragen Bild" class="img-fluid mt-5" style="max-width: 400px;">
+        <img src="images/anfragen.png" alt="Anfragen Bild" class="img-fluid mt-5" style="max-width: 400px; user-select: none; pointer-events: none;" oncontextmenu="return false;">
     </div>
 
     <script>

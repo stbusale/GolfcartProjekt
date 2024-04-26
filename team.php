@@ -15,7 +15,7 @@
 <body>
 
 <header>
-    <div class="fade-in zoom">
+    <div class="fade-in zoom no-select">
         <h1 class="main-title">Unser Team</h1>
     </div>
 </header>
@@ -24,13 +24,13 @@
 
     <!-- Zusätzlicher Text über das Team -->
     <div class="row">
-        <div class="fade-in zoom col-md-8 offset-md-2">
+        <div class="fade-in zoom col-md-8 offset-md-2 no-select">
             <h2 class="section-heading text-center">Das sind wir!</h2>
-            <p class="section-content text-center">Unser Team ist eine dynamische Gruppe von kreativen Köpfen, die sich leidenschaftlich für technologische Innovationen engagieren. Wir vereinen ein breites Spektrum an Fähigkeiten und Fachwissen, um gemeinsam an aufregenden Projekten zu arbeiten. Von Hardware-Entwicklung über Software-Engineering bis hin zur Webgestaltung bringen wir vielfältige Talente und Perspektiven ein, um innovative Lösungen zu entwickeln. Unsere Zusammenarbeit ist geprägt von Enthusiasmus, Teamgeist und dem Streben nach Exzellenz. Wir sind stolz darauf, unsere Ideen in die Realität umzusetzen und gemeinsam technologische Herausforderungen zu meistern. Bleiben Sie gespannt auf unsere kommenden Projekte und Entwicklungen!</p>
+            <p class="section-content text-center no-select">Unser Team ist eine dynamische Gruppe von kreativen Köpfen, die sich leidenschaftlich für technologische Innovationen engagieren. Wir vereinen ein breites Spektrum an Fähigkeiten und Fachwissen, um gemeinsam an aufregenden Projekten zu arbeiten. Von Hardware-Entwicklung über Software-Engineering bis hin zur Webgestaltung bringen wir vielfältige Talente und Perspektiven ein, um innovative Lösungen zu entwickeln. Unsere Zusammenarbeit ist geprägt von Enthusiasmus, Teamgeist und dem Streben nach Exzellenz. Wir sind stolz darauf, unsere Ideen in die Realität umzusetzen und gemeinsam technologische Herausforderungen zu meistern. Bleiben Sie gespannt auf unsere kommenden Projekte und Entwicklungen!</p>
         </div>
     </div>
     <div class="mt-5">
-        <div class="fade-in zoom col-md-8 offset-md-2">
+        <div class="fade-in zoom col-md-8 offset-md-2 no-select">
             <h2 class="section-heading text-center">Mitglieder:</h2>
         </div>
     </div>
@@ -78,14 +78,14 @@
         );
 
         foreach ($team_members as $index => $member) {
-            echo '<div class="col-lg-4 team-member fade-in zoom" style="animation-delay: ' . ($index * 0.2) . 's;">'; // Verzögerung für Animation
+            echo '<div class="col-lg-4 team-member fade-in zoom no-select" style="animation-delay: ' . ($index * 0.2) . 's;">'; // Verzögerung für Animation
             echo '<div class="member-image">';
-            echo '<img src="' . $member['image'] . '" alt="' . $member['name'] . '" class="img-fluid">';
+            echo '<img src="' . $member['image'] . '" alt="' . $member['name'] . '" class="img-fluid no-select">';
             echo '</div>';
             echo '<div class="team-member-details">';
-            echo '<h2 class="h5">' . $member['name'] . '</h2>';
-            echo '<p class="text-muted">' . $member['role'] . '</p>';
-            echo '<p class="member-description">' . $member['description'] . '</p>';
+            echo '<h2 class="h5 no-select">' . $member['name'] . '</h2>';
+            echo '<p class="text-muted no-select">' . $member['role'] . '</p>';
+            echo '<p class="member-description no-select">' . $member['description'] . '</p>';
             echo '</div>';
             echo '</div>';
         }

@@ -78,7 +78,7 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
 </head>
 
 <header>
-    <div class="fade-in zoom">
+    <div class="fade-in zoom no-select">
         <h1 class="main-title">Tagebuch</h1>
     </div>
 </header>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
     <div class="container">
 
            <!-- Alle Einträge -->
-<div class="fade-in zoom container">
+           <div class="fade-in zoom container no-select">
     <div class="container" aria-labelledby="headingOne">
         <div class="container">
             <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
@@ -104,6 +104,7 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
         </div>
     </div>
 </div>
+
 
 
         <div class="accordion mt-3" id="accordionExample">

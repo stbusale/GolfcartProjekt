@@ -6,23 +6,11 @@
     <title>Startseite - Golfcar Challenge</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/startseite.css" rel="stylesheet">
-
-    <style>
-        /* Stile für das Video-Container */
-        #videoContainer {
-            margin-top: 50px; /* Abstand vom oberen Bereich */
-        }
-        #videoContainer video {
-            width: 100%; /* Vollständige Breite des Containers */
-            height: auto; /* Automatische Höhe basierend auf dem Seitenverhältnis */
-            display: block; /* Anzeige als Blockelement */
-        }
-    </style>
 </head>
 <body>
 
 <header>
-    <div class="fade-in zoom">
+    <div class="fade-in zoom no-select">
         <h1 class="main-title">Golfcart Projekt 2024</h1>
     </div>
 </header>
@@ -53,7 +41,7 @@
 </section>
 
 <!-- Willkommensabschnitt -->
-<section class="section fade-in zoom">
+<section class="section fade-in zoom no-select">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">

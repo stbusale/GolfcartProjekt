@@ -11,7 +11,7 @@
 </head>
 
 <header>
-    <div class="fade-in zoom">
+    <div class="fade-in zoom no-select">
         <h1 class="main-title">Kontakt</h1>
     </div>
 </header>
@@ -38,7 +38,7 @@
                         <label for="message" class="form-label">Nachricht:</label>
                         <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-secondary" style="background-color: #333; color: #fff;">Senden</button>
+                    <button type="submit" class="btn btn-primary">Senden</button>
                 </form>
             </div>
             <div class="fade-in zoom col-lg-6">
