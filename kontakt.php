@@ -38,7 +38,8 @@
                         <label for="message" class="form-label">Nachricht:</label>
                         <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Senden</button>
+                    <button type="submit" class="btn btn-primary mb-3">Senden</button>
+
                 </form>
             </div>
             <div class="fade-in zoom col-lg-6">
