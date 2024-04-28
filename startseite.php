@@ -45,8 +45,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h2 class="section-heading">Willkommen zur Golfcar Challenge</h2>
-                <p class="section-content">Die Golfcar Challenge ist ein spannendes Projekt, bei dem Schülerinnen und Schüler autonome Fahrzeuge entwerfen und bauen, um verschiedene Herausforderungen zu meistern. Das Hauptziel besteht darin, einen Golfball mit dem Fahrzeug auf einem definierten Spielfeld zu finden, zu transportieren und in ein Zielfeld zu bringen. Dabei müssen die Fahrzeuge Hindernisse erkennen, umfahren und autonom navigieren.</p>
+                <h2 class="section-heading">Willkommen zur Golfcart Challenge</h2>
+                <p class="section-content">Die Golfcart Challenge ist ein spannendes Projekt, bei dem Schülerinnen und Schüler autonome Fahrzeuge entwerfen und bauen, um verschiedene Herausforderungen zu meistern. Das Hauptziel besteht darin, einen Golfball mit dem Fahrzeug auf einem definierten Spielfeld zu finden, zu transportieren und in ein Zielfeld zu bringen. Dabei müssen die Fahrzeuge Hindernisse erkennen, umfahren und autonom navigieren.</p>
             </div>
         </div>
     </div>

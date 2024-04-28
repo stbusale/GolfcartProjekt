@@ -121,7 +121,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h2 class="section-heading">Kontakt</h2>
-                <p class="section-content">Für weitere Informationen zur Golfcar Challenge 2024 stehen wir Ihnen gerne zur Verfügung.</p>
+                <p class="section-content">Für weitere Informationen zur Golfcart Challenge 2024 stehen wir Ihnen gerne zur Verfügung.</p>
                 <a href="index.php?page=kontakt.php" class="contact-btn">Kontaktieren Sie uns</a>
                 <p class="footer-copyright">&copy; Team ZIB 2024</p>
             </div>

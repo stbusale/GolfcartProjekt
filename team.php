@@ -40,20 +40,20 @@
         <?php
         $team_members = array(
             array(
-                "name" => "Clemens Obkircher",
-                "role" => "Nichts Macher",
-                "image" => "images/Clemens.jpg",
-                "description" => "Clemens ist zweifellos das Alpha-Männchen unserer Gruppe. Seine beeindruckenden Fähigkeiten und sein breites Wissen in allen Lebensbereichen machen ihn zu einem unverzichtbaren Teammitglied. Nicht nur kann er in kürzester Zeit Lösungen finden, die andere Stunden dauern würden, sondern er hat auch die einzigartige Gabe, anderen zu zeigen, wie sie ihre Arbeit verbessern können. Was andere in stundenlanger Arbeit versuchen, kann er in wenigen Minuten meistern. Clemens' Fähigkeit, das Potenzial in jedem von uns zu erkennen und zu fördern, macht ihn zu einem wertvollen Ankerpunkt in unserem Team – ohne ihn wäre unser gemeinsames Projekt nur halb so erfolgreich."
-            ),
-            array(
                 "name" => "Simon Monfrecola",
-                "role" => "Hardware-Auto",
+                "role" => "Projektmanager / Hardware-Auto",
                 "image" => "images/Simon.jpg",
                 "description" => "Simon hat sich als unverzichtbares Mitglied unseres Teams erwiesen, indem er das gesamte 3D-Modell entwickelt hat. Sowohl beim Löten als auch beim Zusammenbau des Autos hat er sein volles Engagement gezeigt. Trotz Herausforderungen wie einem nicht ausreichenden 3D-Drucker hat er alle Hindernisse überwunden und das Team zu internem Erfolg geführt. Sein Einsatz und seine Beharrlichkeit haben nicht nur zu einem erfolgreichen Projekt, sondern auch zu einem beeindruckenden Erscheinungsbild beigetragen."
             ),
             array(
+                "name" => "Clemens Obkircher",
+                "role" => "Hardware-Auto",
+                "image" => "images/Clemens.jpg",
+                "description" => "Clemens ist zweifellos das Alpha-Männchen unserer Gruppe. Seine beeindruckenden Fähigkeiten und sein breites Wissen in allen Lebensbereichen machen ihn zu einem unverzichtbaren Teammitglied. Nicht nur kann er in kürzester Zeit Lösungen finden, die andere Stunden dauern würden, sondern er hat auch die einzigartige Gabe, anderen zu zeigen, wie sie ihre Arbeit verbessern können. Was andere in stundenlanger Arbeit versuchen, kann er in wenigen Minuten meistern. Clemens' Fähigkeit, das Potenzial in jedem von uns zu erkennen und zu fördern, macht ihn zu einem wertvollen Ankerpunkt in unserem Team – ohne ihn wäre unser gemeinsames Projekt nur halb so erfolgreich."
+            ),
+            array(
                 "name" => "Daniel Constantini",
-                "role" => "Abfucker",
+                "role" => "Kamera-Erkennung",
                 "image" => "images/Dani.jpg",
                 "description" => "Daniel war von entscheidender Bedeutung für das gesamte Projekt, insbesondere bei allen Coding-Aufgaben. Sein unermüdlicher Einsatz und sein Fachwissen erstreckten sich über den gesamten Zeitraum des Projekts. Ob es um die Entwicklung von Schaltungen, die Ballerkennung oder die Integration des Fotosensors ging, Daniel war stets präsent und spielte eine zentrale Rolle. Sein Engagement und seine Fähigkeiten haben das Projekt auf ein Top-Niveau gehoben und seinen Erfolg maßgeblich geprägt."
             ),
@@ -61,13 +61,13 @@
                 "name" => "Alex Bussola",
                 "role" => "Website Developer",
                 "image" => "images/Alex.jpg",
-                "description" => "Alex ist ein hochkompetenter Softwareentwickler, der sich sowohl um das Frontend-Design als auch um die Integration von Kameraverknüpfungen auf der Website verdient gemacht hat. Seine Expertise in verschiedenen Fachbereichen und seine Hilfsbereitschaft machen ihn zu einem unverzichtbaren Mitglied im Team. Mit seinem Beitrag trägt er maßgeblich zum Erfolg des gesamten Teams bei."
+                "description" => "Alex ist ein hochkompetenter Website-Entwickler, der maßgeblich daran beteiligt war, die Website online zu bringen. Seine umfassenden Kenntnisse im Bereich Netzwerke haben dazu beigetragen, eine reibungslose Funktionalität zu gewährleisten und potenzielle Probleme frühzeitig zu identifizieren und zu lösen. Durch sein außergewöhnliches Engagement, das sogar Überstunden einschloss, hat er die Entwicklung und den Start der Website effektiv vorangetrieben. Alex ist zweifellos eine treibende Kraft hinter dem Erfolg des Projekts und ein Vorbild für sein Team."
             ),
             array(
                 "name" => "Samuel Gruber",
-                "role" => "Website Developer",
+                "role" => "Manuelle Steuerung",
                 "image" => "images/Samu.jpg",
-                "description" => "Samuel ist ein fähiger Website-Entwickler, der maßgeblich daran beteiligt war, die Website online zu bringen. Seine umfassenden Kenntnisse im Bereich Netzwerke haben dabei geholfen, eine reibungslose Funktionalität zu gewährleisten. Durch sein Engagement, einschließlich Überstunden, hat er sogar das Auto zum Laufen gebracht, was seine Hingabe und Fähigkeiten unterstreicht."
+                "description" => "Samuel ist ein fähiger Softwareentwickler, der sich sowohl um die manuelle Steuerung als auch um die Integration von Kameraverknüpfungen auf der Website verdient gemacht hat. Seine Expertise in verschiedenen Fachbereichen und seine Hilfsbereitschaft machen ihn zu einem unverzichtbaren Mitglied im Team. Mit seinem Beitrag trägt er maßgeblich zum Erfolg des gesamten Teams bei."
             ),
             array(
                 "name" => "Ivan Kaser",
