@@ -26,16 +26,24 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <link href="styles/startseite.css" rel="stylesheet">
 
 <style>
+    /* Ihre vorhandenen CSS-Stile */
+    #container-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Vollständige Höhe des Bildschirms */
+        background-color: #f0f0f0; /* Hintergrundfarbe */
+    }
+
     #game-container {
-        width: 400px;
-        height: 400px;
         display: flex;
         flex-wrap: wrap;
-        margin: auto; /* Center the game container */
-        margin-top: 10px; /* Add space between menu and game */
-        padding: 10px;
-        box-sizing: border-box; /* Include padding in width */
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
     }
+
     .key {
         width: calc(33.33% - 20px); /* Each key takes one-third of the container width minus margin */
         height: calc(33.33% - 20px); /* Each key takes one-third of the container height minus margin */
@@ -46,22 +54,14 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         font-size: 24px;
         margin: 5px; /* Add margin to all keys */
     }
-    
+
     /* Manually add space to WASD */
     #W, #A, #S, #D {
         margin-bottom: 10px; /* Add margin to bottom */
     }
 
-    #container-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Vollständige Höhe des Bildschirms */
-        background-color: #f0f0f0; /* Hintergrundfarbe */
-    }
-
     #embedded-site {
-        width: 60%; /* Breite des eingebetteten Bereichs */
+        width: 80%; /* Breite des eingebetteten Bereichs */
         height: 60vh; /* Höhe des eingebetteten Bereichs */
         border: none; /* Kein Rahmen */
     }
@@ -69,24 +69,39 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     .hidden {
         display: none; /* Verstecke das iframe */
     }
+
+    .buttons {
+        margin-top: 20px; /* Abstand zwischen iframe und Buttons */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .key.btn {
+        flex: 0 0 calc(33.33% - 20px); /* Each key takes one-third of the container width minus margin */
+        height: 100px; /* Set height of buttons */
+        margin: 5px; /* Add margin to all keys */
+    }
 </style>
 </head>
 <body>
 
 <div id="container-wrapper">
-    <div class="fade-in zoom" id="game-container">
-        <div class="key btn" id="W" style="width: 100%;">FORWARD | W</div>
-        <div class="key btn" id="A">LEFT | A</div>
-        <div class="key btn" id="S">BACK | S</div>
-        <div class="key btn" id="D">RIGHT | D</div>
-        <div class="key btn" id="onButton">ON</div>
-        <div class="key btn" id="offButton">OFF</div>
-    </div>
+    <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
+    <iframe id="embedded-site" src="" class="hidden"></iframe>
 
-    <div id="container-wrapper">
-        <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
-        <iframe id="embedded-site" src="" class="hidden"></iframe>
-    
+    <!-- Hier fügen Sie den Container für die Buttons ein -->
+    <div class="buttons">
+        <div id="game-container">
+            <div class="key btn" id="W">FORWARD | W</div>
+            <div class="key btn" id="A">LEFT | A</div>
+            <div class="key btn" id="S">BACK | S</div>
+            <div class="key btn" id="D">RIGHT | D</div>
+            <div class="key btn" id="onButton">ON</div>
+            <div class="key btn" id="offButton">OFF</div>
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap 5 JS --> 
