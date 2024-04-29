@@ -1,5 +1,4 @@
 <?php
-
 // Prüfen, ob eine Sitzung noch nicht gestartet wurde
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -12,7 +11,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     header("Location: index.php"); // Beispiel für eine Weiterleitung zur Index-Seite
     exit; // Beenden der weiteren Ausführung des Skripts
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -27,14 +25,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 
 <style>
     /* Ihre vorhandenen CSS-Stile */
-    #container-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh; /* Vollständige Höhe des Bildschirms */
-        background-color: #f0f0f0; /* Hintergrundfarbe */
-    }
+   
 
     #game-container {
         display: flex;
@@ -88,9 +79,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <body>
 
 <div id="container-wrapper">
-    <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
-    <iframe id="embedded-site" src="" class="hidden"></iframe>
-
     <!-- Hier fügen Sie den Container für die Buttons ein -->
     <div class="buttons">
         <div id="game-container">
@@ -102,6 +90,9 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
             <div class="key btn" id="offButton">OFF</div>
         </div>
     </div>
+
+    <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
+    <iframe id="embedded-site" src="" class="hidden"></iframe>
 </div>
 
 <!-- Bootstrap 5 JS --> 
