@@ -28,7 +28,7 @@ if (session_status() == PHP_SESSION_NONE) {
         }
         /* Aktives Menüelement-Styling */
         .navbar-nav .nav-item.active .nav-link {
-            color: #b26aff; /* Farbe für aktiven Navigationslink */
+            color: #9e5ddd; /* Farbe für aktiven Navigationslink */
         }
     </style>
 </head>

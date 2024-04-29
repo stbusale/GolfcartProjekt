@@ -63,42 +63,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 </header>
 
 <body>
-    <div class="fade-in zoom container">
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>E-Mail</th>
-                        <th>Nachricht</th>
-                        <th>Aktionen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if (!empty($anfragen)): ?>
-                        <?php foreach ($anfragen as $index => $anfrage): ?>
-                            <tr>
-                                <td><?php echo $anfrage['name']; ?></td>
-                                <td><?php echo $anfrage['email']; ?></td>
-                                <td><?php echo $anfrage['message']; ?></td>
-                                <td>
-                                    <button onclick="reply('<?php echo $anfrage['email']; ?>')" class="btn btn-primary">Antworten</button>
-                                    <form method="post" class="d-inline">
-                                        <input type="hidden" name="delete" value="<?php echo $index; ?>">
-                                        <button type="submit" class="btn btn-danger">Löschen</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
+<div class="fade-in zoom container">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped text-white">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>Nachricht</th>
+                    <th>Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($anfragen)): ?>
+                    <?php foreach ($anfragen as $index => $anfrage): ?>
                         <tr>
-                            <td colspan="4" class="text-center">Es liegen keine Anfragen vor.</td>
+                            <td class="text-white"><?php echo $anfrage['name']; ?></td> <!-- Hier wird die Klasse text-white hinzugefügt -->
+                            <td class="text-white"><?php echo $anfrage['email']; ?></td> <!-- Hier wird die Klasse text-white hinzugefügt -->
+                            <td class="text-white"><?php echo $anfrage['message']; ?></td> <!-- Hier wird die Klasse text-white hinzugefügt -->
+                            <td>
+                                <button onclick="reply('<?php echo $anfrage['email']; ?>')" class="btn btn-primary">Antworten</button>
+                                <form method="post" class="d-inline">
+                                    <input type="hidden" name="delete" value="<?php echo $index; ?>">
+                                    <button type="submit" class="btn btn-danger">Löschen</button>
+                                </form>
+                            </td>
                         </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4" class="text-center">Es liegen keine Anfragen vor.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
+</div>
+
 
     <div class="fade-in zoom text-center">
         <img src="images/anfragen.png" alt="Anfragen Bild" class="img-fluid mt-5" style="max-width: 400px; user-select: none; pointer-events: none;" oncontextmenu="return false;">

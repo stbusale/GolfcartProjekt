@@ -26,15 +26,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <link href="styles/startseite.css" rel="stylesheet">
 
 <style>
-    /*body {
-        margin: 0;
-        padding: 0;
-    }
-    .menu {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-    }*/
     #game-container {
         width: 400px;
         height: 400px;
@@ -54,12 +45,29 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         align-items: center;
         font-size: 24px;
         margin: 5px; /* Add margin to all keys */
-    }/*
-    
+    }
     
     /* Manually add space to WASD */
     #W, #A, #S, #D {
         margin-bottom: 10px; /* Add margin to bottom */
+    }
+
+    #container-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Vollständige Höhe des Bildschirms */
+        background-color: #f0f0f0; /* Hintergrundfarbe */
+    }
+
+    #embedded-site {
+        width: 60%; /* Breite des eingebetteten Bereichs */
+        height: 60vh; /* Höhe des eingebetteten Bereichs */
+        border: none; /* Kein Rahmen */
+    }
+
+    .hidden {
+        display: none; /* Verstecke das iframe */
     }
 </style>
 </head>
@@ -67,20 +75,18 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 
 <div id="container-wrapper">
     <div class="fade-in zoom" id="game-container">
-        <div class="key btn btn-primary" id="W" style="width: 100%;">FORWARD | W</div>
-        <div class="key btn btn-primary" id="A">LEFT | A</div>
-        <div class="key btn btn-primary" id="S">BACK | S</div>
-        <div class="key btn btn-primary" id="D">RIGHT | D</div>
-        <div class="key btn btn-primary" id="onButton">ON</div>
-        <div class="key btn btn-primary" id="offButton">OFF</div>
+        <div class="key btn" id="W" style="width: 100%;">FORWARD | W</div>
+        <div class="key btn" id="A">LEFT | A</div>
+        <div class="key btn" id="S">BACK | S</div>
+        <div class="key btn" id="D">RIGHT | D</div>
+        <div class="key btn" id="onButton">ON</div>
+        <div class="key btn" id="offButton">OFF</div>
     </div>
-    <div class="fade-in zoom" id="camera-container">
-        <video id="camera-feed" autoplay controls>
-            <!-- Hier sollte der Quellpfad des Videos sein -->
-            <source src="http://10.10.30.137:8081" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+
+    <div id="container-wrapper">
+        <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
+        <iframe id="embedded-site" src="" class="hidden"></iframe>
+    
 </div>
 
 <!-- Bootstrap 5 JS --> 
@@ -141,35 +147,15 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 
     // Funktionen zum Ein- und Ausschalten
     document.getElementById('onButton').addEventListener('click', function() {
-        sendSignal('on');
+        document.getElementById('embedded-site').classList.remove('hidden');
+        document.getElementById('container-wrapper').style.backgroundColor = '#f0f0f0'; // Zurücksetzen der Hintergrundfarbe
+        document.getElementById('embedded-site').src = 'http://10.10.30.161:5000'; // Setzen der Quelle auf die Website
     });
 
     document.getElementById('offButton').addEventListener('click', function() {
-        sendSignal('off');
+        document.getElementById('embedded-site').classList.add('hidden');
+        document.getElementById('container-wrapper').style.backgroundColor = '#000'; // Ändern der Hintergrundfarbe auf Schwarz
     });
-
-    function sendSignal(signal) {
-        console.log('Sent signal:', signal);
-        fetch('http://10.10.30.137:3000/signal', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ signal })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
-        });
-    }
 </script>
 </body>
 </html>

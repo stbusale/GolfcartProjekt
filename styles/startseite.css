@@ -1,14 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #b26aff;
-    /*background-color: #f8f9fa;*/
-    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #191414; /* Dunkler Hintergrund */
+    color: #fff; /* Weiße Textfarbe */
     margin: 0;
     padding: 0;
 }
 header {
-    /*background-color: #343a40;*/
-    color: #333;
+    color: #fff;
     padding: 10px 0;
     text-align: center;
 }
@@ -34,15 +32,15 @@ header {
     margin-bottom: 30px;
 }
 footer {
-    background-color: #343a40;
-    color: #fff;
+    background-color: #121212; /* Dunkles Footer-Hintergrund */
+    color: #b3b3b3; /* Heller Text für den Footer */
     text-align: center;
     padding: 20px;
 }
 .footer-copyright {
     font-size: 14px;
-    display: block; /* Stellt sicher, dass das Copyright-Element ein Block-Element ist */
-    margin-top: 30px; /* Abstand über dem Copyright-Element */
+    display: block;
+    margin-top: 30px;
 }
 .contact-btn {
     font-size: 18px;
@@ -53,11 +51,31 @@ footer {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-button{
-    background-color: #333;
-}
 .contact-btn:hover {
-    background-color: #801aed;
+    background-color: #9c4ff0; /* Dunkleres Grün im Hover-Zustand */
+}
+
+.btn {
+    background-color: #b26aff;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #9c4ff0;
+}
+
+div.key {
+    background-color: #b26aff;
+}
+
+.key-button:hover {
+    background-color: #fff;
 }
 
 /* Stil für Fade-In-Effekt */
@@ -77,8 +95,6 @@ button{
     opacity: 1;
 }
 
-
-
 /* Stil für Fade-In- und Zoom-Effekt */
 .fade-in.zoom {
     opacity: 0;
@@ -92,31 +108,29 @@ button{
     transform: scale(1);
 }
 
-
-
 /* Alle Bilder in der Diashow auf 16:9 Format und 100% Breite */
 #imageCarousel .carousel-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9; /* Festlegen des Seitenverhältnisses 16:9 */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
 /* Stile für das Video-Container */
 #videoContainer {
-    margin-top: 50px; /* Abstand vom oberen Bereich */
+    margin-top: 50px;
 }
 #videoContainer video {
-    width: 100%; /* Vollständige Breite des Containers */
-    height: auto; /* Automatische Höhe basierend auf dem Seitenverhältnis */
-    display: block; /* Anzeige als Blockelement */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-    pointer-events: none; /* Deaktiviert Mausereignisse */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
