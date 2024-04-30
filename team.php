@@ -62,13 +62,13 @@
                 "role" => "Website Developer",
                 "image" => "images/Alex.jpg",
                 "description" => "Alex ist ein hochkompetenter Website-Entwickler, der maßgeblich daran beteiligt war, die Website online zu bringen. Seine umfassenden Kenntnisse im Bereich Netzwerke haben dazu beigetragen, eine reibungslose Funktionalität zu gewährleisten und potenzielle Probleme frühzeitig zu identifizieren und zu lösen. Durch sein außergewöhnliches Engagement, das sogar Überstunden einschloss, hat er die Entwicklung und den Start der Website effektiv vorangetrieben. Alex ist zweifellos eine treibende Kraft hinter dem Erfolg des Projekts und ein Vorbild für sein Team."
-            ),/*
+            ),
             array(
                 "name" => "Samuel Gruber",
                 "role" => "Manuelle Steuerung",
                 "image" => "images/Samu.jpg",
                 "description" => "Samuel ist ein fähiger Softwareentwickler, der sich sowohl um die manuelle Steuerung als auch um die Integration von Kameraverknüpfungen auf der Website verdient gemacht hat. Seine Expertise in verschiedenen Fachbereichen und seine Hilfsbereitschaft machen ihn zu einem unverzichtbaren Mitglied im Team. Mit seinem Beitrag trägt er maßgeblich zum Erfolg des gesamten Teams bei."
-            ),*/
+            ),
             array(
                 "name" => "Ivan Kaser",
                 "role" => "Steuerung-Auto",
