@@ -1,18 +1,3 @@
-<?php
-// Prüfen, ob eine Sitzung noch nicht gestartet wurde
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Überprüfen, ob der Benutzer angemeldet ist
-if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
-    // Benutzer ist nicht angemeldet oder hat nicht die erforderlichen Berechtigungen
-    // Hier können Sie eine Weiterleitung zur Anmeldeseite oder eine Fehlermeldung einfügen
-    header("Location: index.php"); // Beispiel für eine Weiterleitung zur Index-Seite
-    exit; // Beenden der weiteren Ausführung des Skripts
-}
-?>
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -39,17 +24,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
             <div class="key btn" id="offButton">OFF</div>
         </div>
     </div>
-
-    <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
-    <div id="camera-container" class="hidden">
-        <iframe id="embedded-site" src=""></iframe>
-    </div>
-    <div id="camera-placeholder">
-        <!-- Platzhalterinhalt hier einfügen -->
-        <p>Kamera ist ausgeschaltet</p>
-    </div>
-
-
 
 </div>
 
@@ -111,21 +85,15 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 
     // Funktionen zum Ein- und Ausschalten
     document.getElementById('onButton').addEventListener('click', function() {
-        document.getElementById('camera-container').classList.remove('hidden');
-        document.getElementById('camera-placeholder').classList.add('hidden');
-        document.getElementById('container-wrapper').style.backgroundColor = '#191414';
-        document.getElementById('embedded-site').src = 'http://10.10.30.161:5000';
+        document.getElementById('embedded-site').classList.remove('hidden');
+        document.getElementById('container-wrapper').style.backgroundColor = '#f0f0f0'; // Zurücksetzen der Hintergrundfarbe
+        document.getElementById('embedded-site').src = 'http://10.10.30.161:5000'; // Setzen der Quelle auf die Website
     });
 
     document.getElementById('offButton').addEventListener('click', function() {
-        document.getElementById('camera-container').classList.add('hidden');
-        document.getElementById('camera-placeholder').classList.remove('hidden');
-        document.getElementById('container-wrapper').style.backgroundColor = '#191414';
-        document.getElementById('embedded-site').src = ''; // Leer das src-Attribut, um das Bild zu entfernen
+        document.getElementById('embedded-site').classList.add('hidden');
+        document.getElementById('container-wrapper').style.backgroundColor = '#000'; // Ändern der Hintergrundfarbe auf Schwarz
     });
-
-
-
 </script>
 </body>
 </html>
