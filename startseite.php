@@ -21,10 +21,10 @@
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"> <!-- Wechselintervall in Millisekunden -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/golfcart.jpg" class="d-block w-100" alt="Gruppenbild">
+                    <img src="images/gruppenbild.jpg" class="d-block w-100" alt="Gruppenbild">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/clemens.jpg" class="d-block w-100" alt="Sponsor">
+                    <img src="images/golfcart.jpg" class="d-block w-100" alt="Sponsor">
                 </div>
                 <!-- Weitere Bilder können hier hinzugefügt werden -->
             </div>
@@ -53,19 +53,19 @@
 </section>
 
 <!-- Video-Abschnitt -->
+<!--
 <section id="videoContainer" class="section fade-in zoom">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <video id="mainVideo" controls loop muted>
                     <source src="videos/video.mp4" type="video/mp4">
-                    <!-- Fallback für ältere Browser ohne HTML5-Video-Unterstützung -->
                     Ihr Browser unterstützt das Video-Tag nicht.
                 </video>
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- Bootstrap Bundle mit Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
