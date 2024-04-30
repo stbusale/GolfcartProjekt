@@ -21,7 +21,7 @@
 <header class="mb-5">
     <div class="fade-in zoom">
         <div class="mt-3"></div> <!-- Platz über dem Logo -->
-        <img src="images/logoBlack.png" alt="Logo" class="logo">
+        <img src="images/logo.png" alt="Logo" class="logo">
         <h1 class="main-title mt-3">Login</h1> <!-- Platz über der Überschrift -->
     </div>
 </header>
