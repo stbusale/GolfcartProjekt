@@ -88,7 +88,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 
     function sendData(command) {
         console.log('Sent command:', command);
-        fetch('http://10.10.30.137:3000/keypress', {
+        fetch('http://192.168.0.14:3000/keypress', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         document.getElementById('camera-container').classList.remove('hidden');
         document.getElementById('camera-placeholder').classList.add('hidden');
         document.getElementById('container-wrapper').style.backgroundColor = '#191414';
-        document.getElementById('embedded-site').src = 'http://10.10.30.161:5000';
+        document.getElementById('embedded-site').src = 'http://192.168.0.14:5000';
     });
 
     document.getElementById('offButton').addEventListener('click', function() {
