@@ -7,7 +7,6 @@ if (session_status() === PHP_SESSION_NONE) {
 // Überprüfen, ob der Benutzer angemeldet ist
 if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     // Benutzer ist nicht angemeldet oder hat nicht die erforderlichen Berechtigungen
-    // Hier können Sie eine Weiterleitung zur Anmeldeseite oder eine Fehlermeldung einfügen
     header("Location: index.php"); // Beispiel für eine Weiterleitung zur Index-Seite
     exit; // Beenden der weiteren Ausführung des Skripts
 }
@@ -28,7 +27,6 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
 <body>
 
 <div id="container-wrapper">
-    <!-- Hier fügen Sie den Container für die Buttons ein -->
     <div class="buttons">
         <div id="game-container">
             <div class="key btn" id="W">FORWARD | W</div>
@@ -40,12 +38,10 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
         </div>
     </div>
 
-    <!-- Hier fügen Sie das iframe für die eingebettete Website ein -->
     <div id="camera-container" class="hidden">
         <iframe id="embedded-site" src=""></iframe>
     </div>
     <div id="camera-placeholder">
-        <!-- Platzhalterinhalt hier einfügen -->
         <p>Kamera ist ausgeschaltet</p>
     </div>
 

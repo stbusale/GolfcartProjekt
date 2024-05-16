@@ -8,21 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="styles/startseite.css" rel="stylesheet">
-    <!--
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            padding: 20px;
-        }
-    </style>-->
 </head>
 
 <header class="mb-5">
     <div class="fade-in zoom">
-        <div class="mt-3"></div> <!-- Platz über dem Logo -->
+        <div class="mt-3"></div>
         <img src="images/logo.png" alt="Logo" class="logo">
-        <h1 class="main-title mt-3">Login</h1> <!-- Platz über der Überschrift -->
+        <h1 class="main-title mt-3">Login</h1>
     </div>
 </header>
 

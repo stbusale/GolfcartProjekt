@@ -90,7 +90,6 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
            <div class="fade-in zoom container no-select">
     <div class="container" aria-labelledby="headingOne">
         <div class="container">
-            <!-- Hier den Code für die Anzeige aller Einträge einfügen -->
             <ul class="list-group">
                 <?php foreach ($entries as $entry): ?>
                     <li class="list-group-item">
@@ -109,7 +108,6 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
 
         <div class="accordion mt-3" id="accordionExample">
             <?php if(isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
-            <!-- Neuen Eintrag hinzufügen -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -118,9 +116,7 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <!-- Hier den Code für das Formular zum Hinzufügen eines neuen Eintrags einfügen -->
                         <form method="post">
-                            <!-- Formular zum Hinzufügen eines neuen Eintrags -->
                             <div class="mb-3">
                                 <label for="datum" class="form-label">Datum:</label>
                                 <input type="date" id="datum" name="datum" class="form-control" required>
@@ -174,7 +170,6 @@ if (!isset($_SESSION['username']) || ($_SESSION['username'] !== 'admin' && $_SES
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <!-- Hier den Code für das Formular zum Löschen eines Eintrags einfügen -->
                         <form method="post">
                             <!-- Formular zum Löschen eines Eintrags -->
                             <div class="mb-3">

@@ -1,11 +1,11 @@
 .navbar-brand, .navbar-nav .nav-link {
-    color: #b3b3b3; /* Heller Text für die Navigationslinks */
+    color: #b3b3b3;
 }
 
 .navbar-brand:hover, .navbar-nav .nav-link:hover {
-    color: #b26aff; /* Spotify-Grün für Navigationslinks beim Hover */
+    color: #b26aff;
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #fff; /* Weiße Textfarbe für aktiven Navigationslink */
+    color: #fff;
 }
